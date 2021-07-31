@@ -70,6 +70,7 @@ exports.run = async (client, message, args) => {
       try {
         songInfo = await getInfo(search);
       } catch (error) {
+        console.log(error);
         client.logger.error(error.stack || error);
         return message.reply(error.message);
       }
